@@ -11,107 +11,86 @@ document.addEventListener('DOMContentLoaded', function() {
     initGlitchEffects();
 });
 
-// Loading Screen Animation
+// Loading Screen Animation - Ultra Fast
 function initLoading() {
     const loadingScreen = document.getElementById('loading-screen');
     const loadingFill = document.querySelector('.loading-fill');
     const systemInfo = document.querySelectorAll('.system-info p');
     
-    // Animate loading bar
+    // Super fast loading animation - 400ms total
     anime({
         targets: loadingFill,
         width: '100%',
-        duration: 3000,
+        duration: 300,
         easing: 'easeInOutQuad'
     });
     
-    // Animate system messages
+    // Quick system messages
     anime({
         targets: systemInfo,
         opacity: [0, 1],
         translateY: [20, 0],
-        delay: anime.stagger(500, {start: 500}),
-        duration: 1000,
+        delay: anime.stagger(50, {start: 50}),
+        duration: 200,
         easing: 'easeOutQuad'
     });
     
-    // Hide loading screen after animation
+    // Hide loading screen quickly - 400ms total
     setTimeout(() => {
         anime({
             targets: loadingScreen,
             opacity: 0,
-            duration: 500,
+            duration: 100,
             complete: () => {
                 loadingScreen.style.display = 'none';
                 // Start main animations
                 animateHeroEntry();
             }
         });
-    }, 4000);
+    }, 400);
 }
 
-// Initialize Particles.js
+// Initialize Particles.js - Optimized for performance
 function initParticles() {
     if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 80,
+                    value: 40, // Reduced further for faster performance
                     density: {
                         enable: true,
-                        value_area: 800
+                        value_area: 1200
                     }
                 },
                 color: {
                     value: '#00ff41'
                 },
                 shape: {
-                    type: 'circle',
-                    stroke: {
-                        width: 0,
-                        color: '#000000'
-                    }
+                    type: 'circle'
                 },
                 opacity: {
-                    value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
+                    value: 0.3,
+                    random: false
                 },
                 size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
+                    value: 1.5, // Smaller particles
+                    random: true
                 },
                 line_linked: {
                     enable: true,
-                    distance: 150,
+                    distance: 100, // Shorter connections
                     color: '#00ff41',
-                    opacity: 0.4,
+                    opacity: 0.2,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 2,
+                    speed: 1, // Slower movement for better performance
                     direction: 'none',
                     random: false,
                     straight: false,
                     out_mode: 'out',
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
+                    bounce: false
                 }
             },
             interactivity: {
@@ -122,34 +101,14 @@ function initParticles() {
                         mode: 'repulse'
                     },
                     onclick: {
-                        enable: true,
-                        mode: 'push'
+                        enable: false // Disabled for performance
                     },
                     resize: true
                 },
                 modes: {
-                    grab: {
-                        distance: 400,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
                     repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
+                        distance: 80,
+                        duration: 0.2
                     }
                 }
             },
@@ -228,65 +187,65 @@ function initTypingEffect() {
             currentChar++;
         }
         
-        let typeSpeed = isDeleting ? 50 : 100;
+        let typeSpeed = isDeleting ? 60 : 120; // Slower, more realistic typing speed
         
         if (!isDeleting && currentChar === command.length) {
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 1500; // Longer pause at end to read
             isDeleting = true;
         } else if (isDeleting && currentChar === 0) {
             isDeleting = false;
             currentCommand = (currentCommand + 1) % commands.length;
-            typeSpeed = 500; // Pause before next command
+            typeSpeed = 500; // Medium pause before next command
         }
         
         setTimeout(typeEffect, typeSpeed);
     }
     
-    // Start typing effect after loading
-    setTimeout(typeEffect, 5000);
+    // Start typing effect immediately after loading
+    setTimeout(typeEffect, 600);
 }
 
-// Hero section entry animation
+// Hero section entry animation - Faster
 function animateHeroEntry() {
     const heroContent = document.querySelector('.hero-content');
     const heroVisual = document.querySelector('.hero-visual');
     
-    // Animate hero content
+    // Animate hero content faster
     anime({
         targets: heroContent,
         opacity: [0, 1],
         translateY: [50, 0],
-        duration: 1000,
+        duration: 500,
         easing: 'easeOutQuad'
     });
     
-    // Animate hero visual
+    // Animate hero visual faster
     anime({
         targets: heroVisual,
         opacity: [0, 1],
         translateX: [100, 0],
-        duration: 1000,
-        delay: 500,
+        duration: 500,
+        delay: 200,
         easing: 'easeOutQuad'
     });
     
-    // Animate terminal appearance
+    // Animate terminal appearance faster
     anime({
         targets: '.terminal-body',
         scale: [0.8, 1],
         opacity: [0, 1],
-        duration: 800,
-        delay: 200,
+        duration: 400,
+        delay: 100,
         easing: 'easeOutBack'
     });
     
-    // Animate buttons
+    // Animate buttons faster
     anime({
         targets: '.hero-buttons .btn',
         scale: [0, 1],
         opacity: [0, 1],
-        delay: anime.stagger(200, {start: 1000}),
-        duration: 600,
+        delay: anime.stagger(100, {start: 300}),
+        duration: 300,
         easing: 'easeOutBack'
     });
 }
