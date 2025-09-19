@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash Mishra - Full Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="glitch-text" data-text="INITIALIZING...">INITIALIZING...</div>
+            <div class="loading-bar">
+                <div class="loading-fill"></div>
+            </div>
+            <div class="system-info">
+                <p>SYSTEM BOOT SEQUENCE</p>
+                <p>LOADING NEURAL NETWORKS...</p>
+                <p>ESTABLISHING CONNECTION...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo glitch-text" data-text="ASH.EXE">ASH.EXE</div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#experience" class="nav-link">EXPERIENCE</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body">
+                <div class="prompt-line">
+                    <span class="prompt">root@portfolio:~$</span>
+                    <span class="command typing-text">whoami</span>
+                </div>
+                <div class="output">
+                    <h1 class="name glitch-text" data-text="ASH MISHRA">ASH MISHRA</h1>
+                    <h2 class="title">COMPUTER SCIENCE RESEARCHER</h2>
+                    <h3 class="subtitle">MACHINE LEARNING ENGINEER</h3>
+                </div>
+                <div class="prompt-line">
+                    <span class="prompt">root@portfolio:~$</span>
+                    <span class="command">cat about.txt</span>
+                </div>
+                <div class="output">
+                    <p class="description">
+                        Junior CS student at Mississippi State University specializing in AI/ML research,
+                        computer vision, and distributed systems. Currently developing innovative
+                        solutions at NSPARC with expertise in real-time depth estimation and 
+                        cellular network optimization. Actively seeking internships and co-op 
+                        opportunities to apply cutting-edge research in industry settings.
+                    </p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    VIEW PROJECTS
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-terminal"></i>
+                    ESTABLISH CONNECTION
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hologram-container">
+                <div class="hologram"></div>
+                <div class="scan-lines"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="SYSTEM STATUS">SYSTEM STATUS</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>EDUCATION</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="education-item">
+                            <h4>Mississippi State University</h4>
+                            <p class="degree">B.S. Computer Science (Junior)</p>
+                            <p class="honors">Shackouls Honors College</p>
+                            <p class="minor">Minor in Statistics</p>
+                            <p class="gpa">GPA: 4.0/4.0</p>
+                            <p class="graduation">Expected: May 2027</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-header">
+                        <i class="fas fa-code"></i>
+                        <h3>CORE SYSTEMS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Languages</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item advanced">Python</span>
+                                    <span class="skill-item intermediate">C++</span>
+                                    <span class="skill-item intermediate">JavaScript</span>
+                                    <span class="skill-item basic">SQL</span>
+                                    <span class="skill-item beginner">Dart</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Frameworks</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">scikit-learn</span>
+                                    <span class="skill-item">NumPy</span>
+                                    <span class="skill-item">OpenGL</span>
+                                    <span class="skill-item">Docker</span>
+                                    <span class="skill-item">Kubernetes</span>
+                                    <span class="skill-item">Flutter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>PERFORMANCE METRICS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="metric">
+                            <span class="metric-label">Research Projects</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" data-width="95"></div>
+                            </div>
+                            <span class="metric-value">15+</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">ML Model Accuracy</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" data-width="96"></div>
+                            </div>
+                            <span class="metric-value">96%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Problem Solving</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" data-width="98"></div>
+                            </div>
+                            <span class="metric-value">98%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="WORK HISTORY">WORK HISTORY</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <h3>NSPARC Intern</h3>
+                            <p class="company">NSPARC, Starkville, MS</p>
+                            <p class="duration">September 2025 - Present</p>
+                            <ul>
+                                <li>Collaborating with Dr. Asad to develop innovative data-driven solutions for local businesses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <h3>Undergraduate Researcher</h3>
+                            <p class="company">Mississippi State University</p>
+                            <p class="duration">August 2023 - August 2025</p>
+                            <ul>
+                                <li>Created monocular depth estimation system using YOLOV11 and RT MonoDepth for real-time construction object analysis</li>
+                                <li>Trained object detection model on 9,000+ cattle feed lots achieving 94% accuracy</li>
+                                <li>Developed Apache Kafka data pipeline for unsupervised learning with F1 score of 0.91</li>
+                                <li>Containerized OAI gNb and UE core files using Docker and Kubernetes</li>
+                                <li>Programmed 20+ OpenAI cellular Non-Real-Time RIC files using C++</li>
+                                <li>Automated mmWave tower beamforming using GNU Radio and Bash scripting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <h3>Summer Research Intern</h3>
+                            <p class="company">Purdue University, Hammond, IN</p>
+                            <p class="duration">June 2024 - August 2024</p>
+                            <ul>
+                                <li>Developed linear regression model achieving 94% accuracy in crop yield forecasting</li>
+                                <li>Engineered logistic regression model with 96% accuracy for dry bean classification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="PROJECT FILES">PROJECT FILES</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Library Mobile App</h3>
+                        <div class="project-tech">
+                            <span>Dart</span>
+                            <span>Flutter</span>
+                        </div>
+                    </div>
+                    <p>Personal e-reader application with OLED-black theme and Bookerly font for enhanced reading experience.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ashwani564/My-Library" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-atom"></i>
+                        <h3>Gravity Simulation</h3>
+                        <div class="project-tech">
+                            <span>C++</span>
+                            <span>OpenGL</span>
+                        </div>
+                    </div>
+                    <p>Three-body gravity simulation using OpenGL and GLFW for real-time gravitational effects visualization.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ashwani564/gravity_simulation" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-eye"></i>
+                        <h3>RT Monodepth Construction</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>YOLOV11</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+                    <p>Real-time monocular depth estimation system for construction object analysis using advanced ML models.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ashwani564/RT-Monodepth-Construction" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fab fa-youtube"></i>
+                        <h3>YouTube Shorts Tracker</h3>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>YAML</span>
+                        </div>
+                    </div>
+                    <p>Browser extension tracking YouTube Shorts watch time using YouTube Data API for usage analytics.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-university"></i>
+                        <h3>Bank Management System</h3>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <p>Secure banking system with C# logic and PostgreSQL database for account and transaction management.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ashwani564/Bank-Management-System" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Library Management System</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <p>Full-scale library management system with Python logic and PostgreSQL for data persistence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="ESTABLISH_CONNECTION">ESTABLISH_CONNECTION</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="contact-item">
+                                <span class="prompt">root@contact:~$</span>
+                                <span class="command">ping ashwani.email</span>
+                                <div class="output">
+                                    <a href="mailto:am5082@msstate.edu">am5082@msstate.edu</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="prompt">root@contact:~$</span>
+                                <span class="command">curl -L github.com/ashwani</span>
+                                <div class="output">
+                                    <a href="https://github.com/Ashwani564" target="_blank">github.com/Ashwani564</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="prompt">root@contact:~$</span>
+                                <span class="command">connect linkedin</span>
+                                <div class="output">
+                                    <a href="https://www.linkedin.com/in/ashwani-m1" target="_blank">linkedin.com/in/ashwani-m1</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="prompt">root@contact:~$</span>
+                                <span class="command">call +1</span>
+                                <div class="output">
+                                    <a href="tel:+17739986828">773-998-6828</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <h3>SEND_MESSAGE.exe</h3>
+                        <div class="form-group">
+                            <label for="name">NAME:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">EMAIL:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">MESSAGE:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            TRANSMIT
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Ash Mishra. All systems operational.</p>
+                    <p>Designed with <span class="heart">♥</span> using retro-futuristic aesthetics</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ashwani564" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ashwani-m1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:am5082@msstate.edu"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
