@@ -205,48 +205,36 @@ function initTypingEffect() {
     setTimeout(typeEffect, 600);
 }
 
-// Hero section entry animation - Faster
+// Hero section entry animation - Synchronized
 function animateHeroEntry() {
     const heroContent = document.querySelector('.hero-content');
     const heroVisual = document.querySelector('.hero-visual');
     
-    // Animate hero content faster
+    // Animate all hero elements together with no delays
     anime({
-        targets: heroContent,
+        targets: [heroContent, '.hero-buttons .btn'],
         opacity: [0, 1],
-        translateY: [50, 0],
-        duration: 500,
+        translateY: [30, 0],
+        duration: 600,
         easing: 'easeOutQuad'
     });
     
-    // Animate hero visual faster
+    // Animate hero visual at the same time
     anime({
         targets: heroVisual,
         opacity: [0, 1],
-        translateX: [100, 0],
-        duration: 500,
-        delay: 200,
+        translateX: [50, 0],
+        duration: 600,
         easing: 'easeOutQuad'
     });
     
-    // Animate terminal appearance faster
+    // Animate terminal appearance at the same time
     anime({
         targets: '.terminal-body',
-        scale: [0.8, 1],
+        scale: [0.95, 1],
         opacity: [0, 1],
-        duration: 400,
-        delay: 100,
-        easing: 'easeOutBack'
-    });
-    
-    // Animate buttons faster
-    anime({
-        targets: '.hero-buttons .btn',
-        scale: [0, 1],
-        opacity: [0, 1],
-        delay: anime.stagger(100, {start: 300}),
-        duration: 300,
-        easing: 'easeOutBack'
+        duration: 600,
+        easing: 'easeOutQuad'
     });
 }
 
