@@ -398,18 +398,17 @@ body {
 .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
 }
 
 .experience-card {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 15px;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: 20px 22px;
+    padding: 24px 26px;
     text-decoration: none;
     transition: var(--transition-normal);
 }
@@ -425,6 +424,69 @@ body {
     box-shadow: 0 8px 30px rgba(197, 255, 65, 0.1);
 }
 
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.experience-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.experience-role {
+    font-size: 0.8rem;
+    color: var(--accent-orange);
+    font-weight: 500;
+}
+
+.experience-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.experience-bullets {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experience-bullets li {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.experience-bullets li strong {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.experience-bullets li a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent-orange);
+    transition: var(--transition-fast);
+}
+
+.experience-bullets li a:hover {
+    color: var(--accent-lime);
+    border-color: var(--accent-lime);
+}
+
 .experience-content {
     flex: 1;
 }
@@ -436,27 +498,10 @@ body {
     margin-bottom: 4px;
 }
 
-.experience-role {
-    font-size: 0.8rem;
-    color: var(--accent-orange);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
 .experience-description {
     font-size: 0.78rem;
     color: var(--text-muted);
     line-height: 1.6;
-}
-
-.experience-date {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    white-space: nowrap;
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
 }
 
 /* ===============================================

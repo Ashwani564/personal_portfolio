@@ -111,30 +111,47 @@
                     <span class="title-solid">EXPERIENCE</span>
                 </h2>
                 <div class="experience-list">
-                    <a href="https://www.nsparc.msstate.edu/" target="_blank" class="experience-card featured">
-                        <div class="experience-content">
-                            <h3>NSPARC</h3>
-                            <p class="experience-role">Undergraduate Researcher</p>
-                            <p class="experience-description">Engineered a 3-stage offline CV pipeline for AI Marksmanship Coach achieving 97.4% stance detection. Built full-stack Chrome Extension with local Llama 3.2 server optimized for 4GB RAM systems.</p>
+                    <div class="experience-card featured">
+                        <div class="experience-header">
+                            <div>
+                                <h3>NSPARC</h3>
+                                <p class="experience-role">Undergraduate Researcher</p>
+                            </div>
+                            <span class="experience-date">Sep 2025 - Present</span>
                         </div>
-                        <span class="experience-date">Sep 2025 - Present</span>
-                    </a>
-                    <a href="https://www.msstate.edu/" target="_blank" class="experience-card">
-                        <div class="experience-content">
-                            <h3>Mississippi State University</h3>
-                            <p class="experience-role">Undergraduate Researcher</p>
-                            <p class="experience-description">Created monocular depth estimation system using YOLOV11 and Depth-pro. Trained object detection models on 9,000+ cattle feed lots with 94% accuracy. Programmed 20+ OpenAirInterface cellular files.</p>
+                        <ul class="experience-bullets">
+                            <li><strong>AI Marksmanship Coach:</strong> Engineered a 3-stage offline CV pipeline (Video Processor → Biometric Analyzer → Audio Coach) using MediaPipe/OpenCV. Achieved 97.4% stance detection confidence via a deterministic geometry algorithm (75 keypoints/frame), delivering instant feedback via Gemini 2.0 Flash API and LemonFox TTS.</li>
+                            <li><strong>Local LLM Web Summarizer:</strong> Built a full-stack Chrome Extension (Manifest V3) integrated with a local Llama 3.2:1B inference server. Optimized the Flask backend to run on 4GB RAM systems with 2–5s latency, ensuring 100% data privacy.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Mississippi State University</h3>
+                                <p class="experience-role">Undergraduate Researcher</p>
+                            </div>
+                            <span class="experience-date">Aug 2023 - Aug 2025</span>
                         </div>
-                        <span class="experience-date">Aug 2023 - Aug 2025</span>
-                    </a>
-                    <a href="https://www.purdue.edu/" target="_blank" class="experience-card">
-                        <div class="experience-content">
-                            <h3>Purdue University</h3>
-                            <p class="experience-role">Summer Research Intern</p>
-                            <p class="experience-description">Developed linear regression model achieving 94% accuracy in crop yield forecasting. Engineered logistic regression model with 96% accuracy for dry bean classification.</p>
+                        <ul class="experience-bullets">
+                            <li>Created a <a href="https://github.com/Ashwani564/RT-Monodepth-Construction" target="_blank">monocular depth estimation</a> system using YOLOV11, <a href="https://github.com/Ashwani564/ml-depth-pro-flask" target="_blank">Depth-pro</a>, and RT MonoDepth to accurately calculate depth of construction objects, achieving real-time performance.</li>
+                            <li>Annotated and trained an object detection model on 9,000+ open cattle feed lots in NAIP using YOLOV11, achieving 94% classification accuracy.</li>
+                            <li>Programmed 20+ OpenAirInterface cellular Non-Real-Time RIC files using C++ and containerized gNb/UE core files using Docker and Kubernetes for dynamic radio resource allocation.</li>
+                            <li>Developed a data pipeline using Apache Kafka to boost an unsupervised learning model (F1 score: 0.91) and automated beamforming of Sivers mmWave towers using GNU Radio and Bash scripting.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Purdue University</h3>
+                                <p class="experience-role">Summer Research Intern</p>
+                            </div>
+                            <span class="experience-date">Jun 2024 - Aug 2024</span>
                         </div>
-                        <span class="experience-date">Jun 2024 - Aug 2024</span>
-                    </a>
+                        <ul class="experience-bullets">
+                            <li>Developed a linear regression model using scikit-learn, achieving 94% prediction accuracy in crop yield rate forecasting.</li>
+                            <li>Engineered a logistic regression model for a multi-class problem, attaining 96% accuracy in dry bean classification.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
