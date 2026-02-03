@@ -459,7 +459,7 @@ body {
     box-shadow: 0 0 0 4px rgba(244, 108, 56, 0.2);
 }
 
-.timeline-node.node-branch {
+.timeline-node.node-lime {
     background: var(--accent-lime);
     box-shadow: 0 0 0 4px rgba(197, 255, 65, 0.2);
 }
@@ -502,7 +502,6 @@ body {
 
 .experience-card.purdue-card {
     border-color: var(--border-color);
-    margin-top: 60px;
 }
 
 .experience-card:hover {
@@ -589,31 +588,6 @@ body {
 .experience-bullets li a:hover {
     color: var(--accent-lime);
     border-color: var(--accent-lime);
-}
-
-/* MSU Row with Branch */
-.msu-row {
-    align-items: stretch;
-}
-
-.msu-row .timeline-content-left {
-    align-self: start;
-}
-
-.msu-row .timeline-content-right {
-    align-self: start;
-}
-
-/* Horizontal Branch Line for Purdue */
-.msu-row .timeline-node::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 20px;
-    height: 2px;
-    background: var(--border-color);
-    transform: translateY(-50%);
 }
 
 /* ===============================================
@@ -1158,34 +1132,8 @@ body {
         margin-top: 0;
     }
 
-    .timeline-content-left,
     .timeline-content-right {
         grid-column: 2;
-        justify-content: flex-start;
-    }
-
-    .timeline-content-left {
-        order: 1;
-    }
-
-    .msu-row {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding-left: 30px;
-    }
-
-    .msu-row .timeline-node {
-        position: absolute;
-        left: 3px;
-    }
-
-    .msu-row .timeline-node::after {
-        display: none;
-    }
-
-    .experience-card.purdue-card {
-        margin-top: 0;
     }
 
     .experience-card h3 {
