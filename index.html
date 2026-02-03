@@ -101,7 +101,7 @@
                 </div>
             </section>
 
-            <!-- Work Experience Section -->
+            <!-- Work Experience Section - Timeline Layout -->
             <section id="experience" class="experience-section">
                 <h2 class="section-title">
                     <span class="title-line">
@@ -110,47 +110,57 @@
                     </span>
                     <span class="title-solid">EXPERIENCE</span>
                 </h2>
-                <div class="experience-list">
-                    <div class="experience-card featured">
-                        <div class="experience-header">
-                            <div>
-                                <h3>NSPARC</h3>
-                                <p class="experience-role">Undergraduate Researcher</p>
-                            </div>
-                            <span class="experience-date">Sep 2025 - Present</span>
+                
+                <div class="timeline-container">
+                    <!-- Timeline Line -->
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Sep 2025 - NSPARC -->
+                    <div class="timeline-row">
+                        <div class="timeline-date-left">
+                            <span class="timeline-date-text">Sep 2025</span>
                         </div>
-                        <ul class="experience-bullets">
-                            <li><strong>AI Marksmanship Coach:</strong> Engineered a 3-stage offline CV pipeline (Video Processor → Biometric Analyzer → Audio Coach) using MediaPipe/OpenCV. Achieved 97.4% stance detection confidence via a deterministic geometry algorithm (75 keypoints/frame), delivering instant feedback via Gemini 2.0 Flash API and LemonFox TTS.</li>
-                            <li><strong>Local LLM Web Summarizer:</strong> Built a full-stack Chrome Extension (Manifest V3) integrated with a local Llama 3.2:1B inference server. Optimized the Flask backend to run on 4GB RAM systems with 2–5s latency, ensuring 100% data privacy.</li>
-                        </ul>
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content-right">
+                            <div class="experience-card featured">
+                                <h3>National Strategic Planning & Analysis Research Center (NSPARC)</h3>
+                                <p class="experience-role">Undergraduate Researcher</p>
+                                <ul class="experience-bullets">
+                                    <li><strong>AI Marksmanship Coach:</strong> Engineered a 3-stage offline CV pipeline (Video Processor → Biometric Analyzer → Audio Coach) using MediaPipe/OpenCV. Achieved 97.4% stance detection confidence via a deterministic geometry algorithm (75 keypoints/frame), delivering instant feedback via Gemini 2.0 Flash API and LemonFox TTS.</li>
+                                    <li><strong>Local LLM Web Summarizer:</strong> Built a full-stack Chrome Extension (Manifest V3) integrated with a local Llama 3.2:1B inference server. Optimized the Flask backend to run on 4GB RAM systems with 2–5s latency, ensuring 100% data privacy.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
+
+                    <!-- Aug 2023 - Aug 2025: MSU (left) branching to Purdue (right) -->
+                    <div class="timeline-row msu-row">
+                        <div class="timeline-content-left">
+                            <div class="experience-card msu-card">
                                 <h3>Mississippi State University</h3>
                                 <p class="experience-role">Undergraduate Researcher</p>
+                                <span class="experience-date-badge">Aug 2023 - Aug 2025</span>
+                                <ul class="experience-bullets">
+                                    <li>Pioneered a <a href="https://github.com/Ashwani564/RT-Monodepth-Construction" target="_blank">real-time depth alert system</a> using YOLOv11 and <a href="https://github.com/Ashwani564/ml-depth-pro-flask" target="_blank">Depth-pro</a> to mitigate construction site fatalities; research currently submitted to the International Council of Construction Research (Q1 Journal).</li>
+                                    <li>Annotated and trained an object detection model on 9,000+ open cattle feed lots in NAIP using YOLOV11, achieving 94% classification accuracy for stricter policy enforcement.</li>
+                                    <li>Programmed 20+ OpenAirInterface cellular Non-Real-Time RIC files using C++ and containerized gNb/UE core files using Docker and Kubernetes, increasing dynamic radio resource allocation by 200%.</li>
+                                    <li>Developed a data pipeline using Apache Kafka to boost an unsupervised learning model (F1 score: 0.91) and automated beamforming of Sivers mmWave towers using GNU Radio and Bash scripting.</li>
+                                </ul>
                             </div>
-                            <span class="experience-date">Aug 2023 - Aug 2025</span>
                         </div>
-                        <ul class="experience-bullets">
-                            <li>Created a <a href="https://github.com/Ashwani564/RT-Monodepth-Construction" target="_blank">monocular depth estimation</a> system using YOLOV11, <a href="https://github.com/Ashwani564/ml-depth-pro-flask" target="_blank">Depth-pro</a>, and RT MonoDepth to accurately calculate depth of construction objects, achieving real-time performance.</li>
-                            <li>Annotated and trained an object detection model on 9,000+ open cattle feed lots in NAIP using YOLOV11, achieving 94% classification accuracy.</li>
-                            <li>Programmed 20+ OpenAirInterface cellular Non-Real-Time RIC files using C++ and containerized gNb/UE core files using Docker and Kubernetes for dynamic radio resource allocation.</li>
-                            <li>Developed a data pipeline using Apache Kafka to boost an unsupervised learning model (F1 score: 0.91) and automated beamforming of Sivers mmWave towers using GNU Radio and Bash scripting.</li>
-                        </ul>
-                    </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
+                        <div class="timeline-node node-branch"></div>
+                        <div class="timeline-content-right">
+                            <!-- Purdue positioned alongside MSU timeline -->
+                            <div class="experience-card purdue-card">
                                 <h3>Purdue University</h3>
                                 <p class="experience-role">Summer Research Intern</p>
+                                <span class="experience-date-badge">Jun 2024 - Aug 2024</span>
+                                <ul class="experience-bullets">
+                                    <li>Developed a linear regression model using scikit-learn, achieving 94% prediction accuracy in crop yield rate forecasting.</li>
+                                    <li>Engineered a logistic regression model for a multi-class problem, attaining 96% accuracy in dry bean classification.</li>
+                                </ul>
                             </div>
-                            <span class="experience-date">Jun 2024 - Aug 2024</span>
                         </div>
-                        <ul class="experience-bullets">
-                            <li>Developed a linear regression model using scikit-learn, achieving 94% prediction accuracy in crop yield rate forecasting.</li>
-                            <li>Engineered a logistic regression model for a multi-class problem, attaining 96% accuracy in dry bean classification.</li>
-                        </ul>
                     </div>
                 </div>
             </section>
