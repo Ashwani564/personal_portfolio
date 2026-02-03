@@ -1,12 +1,14 @@
 /**
  * Modern Portfolio JavaScript
  * Clean, minimal animations and interactions
+ * Sawad Framer Template Inspired
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initContactForm();
     initSmoothScroll();
+    initParallaxCard();
 });
 
 /**
@@ -32,13 +34,14 @@ function initScrollAnimations() {
     const animatedElements = document.querySelectorAll(
         '.hero-section, .stats-section, .projects-section, .experience-section, ' +
         '.tools-section, .education-section, .contact-section, ' +
-        '.project-card, .experience-card, .tool-card, .education-card, .section-title'
+        '.project-card, .experience-card, .tool-card, .education-card, .section-title, ' +
+        '.stat-tags, .contact-item'
     );
 
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.05}s, transform 0.6s ease ${index * 0.05}s`;
+        el.style.transition = `opacity 0.6s ease ${index * 0.03}s, transform 0.6s ease ${index * 0.03}s`;
         observer.observe(el);
     });
 }
@@ -72,11 +75,17 @@ function initContactForm() {
         e.preventDefault();
 
         const submitBtn = form.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
+        const btnSpan = submitBtn.querySelector('span');
+        const originalText = btnSpan ? btnSpan.textContent : submitBtn.textContent;
         
         // Show loading state
-        submitBtn.textContent = 'Sending...';
+        if (btnSpan) {
+            btnSpan.textContent = 'Sending...';
+        } else {
+            submitBtn.textContent = 'Sending...';
+        }
         submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
 
         // Collect form data
         const formData = new FormData(form);
@@ -92,8 +101,13 @@ function initContactForm() {
         } catch (error) {
             showNotification('Something went wrong. Please try again.', 'error');
         } finally {
-            submitBtn.textContent = originalText;
+            if (btnSpan) {
+                btnSpan.textContent = originalText;
+            } else {
+                submitBtn.textContent = originalText;
+            }
             submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
         }
     });
 }
@@ -115,18 +129,18 @@ function showNotification(message, type = 'info') {
         position: 'fixed',
         bottom: '30px',
         right: '30px',
-        padding: '16px 24px',
-        borderRadius: '12px',
+        padding: '18px 28px',
+        borderRadius: '16px',
         backgroundColor: type === 'success' ? '#C5FF41' : type === 'error' ? '#FF5252' : '#F46C38',
         color: type === 'success' ? '#151312' : '#ffffff',
         fontFamily: 'Poppins, sans-serif',
-        fontWeight: '500',
+        fontWeight: '600',
         fontSize: '0.95rem',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+        boxShadow: '0 15px 40px rgba(0, 0, 0, 0.3)',
         zIndex: '10000',
         transform: 'translateY(100px)',
         opacity: '0',
-        transition: 'all 0.3s ease'
+        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
     });
 
     document.body.appendChild(notification);
@@ -141,73 +155,84 @@ function showNotification(message, type = 'info') {
     setTimeout(() => {
         notification.style.transform = 'translateY(100px)';
         notification.style.opacity = '0';
-        setTimeout(() => notification.remove(), 300);
+        setTimeout(() => notification.remove(), 400);
     }, 4000);
 }
 
 /**
  * Add parallax effect to profile card (subtle)
  */
-document.addEventListener('mousemove', function(e) {
+function initParallaxCard() {
     const card = document.querySelector('.profile-card');
-    if (!card || window.innerWidth < 768) return;
-
-    const rect = card.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+    const sidebar = document.querySelector('.profile-sidebar');
     
-    const deltaX = (e.clientX - centerX) / 50;
-    const deltaY = (e.clientY - centerY) / 50;
+    if (!card || !sidebar || window.innerWidth < 768) return;
 
-    card.style.transform = `perspective(1000px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
-});
+    sidebar.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const deltaX = (e.clientX - centerX) / 40;
+        const deltaY = (e.clientY - centerY) / 40;
 
-// Reset card transform on mouse leave
-document.querySelector('.profile-sidebar')?.addEventListener('mouseleave', function() {
-    const card = document.querySelector('.profile-card');
-    if (card) {
+        card.style.transform = `perspective(1000px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
+        card.style.transition = 'transform 0.1s ease-out';
+    });
+
+    sidebar.addEventListener('mouseleave', function() {
         card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-    }
-});
-
-/**
- * Animated counter for stats
- */
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    
-    counters.forEach(counter => {
-        const target = counter.textContent;
-        const isPlus = target.startsWith('+');
-        const numValue = parseFloat(target.replace(/[^0-9.]/g, ''));
-        
-        let current = 0;
-        const increment = numValue / 50;
-        const duration = 1500;
-        const stepTime = duration / 50;
-
-        const updateCounter = () => {
-            current += increment;
-            if (current < numValue) {
-                counter.textContent = (isPlus ? '+' : '') + 
-                    (Number.isInteger(numValue) ? Math.floor(current) : current.toFixed(1));
-                setTimeout(updateCounter, stepTime);
-            } else {
-                counter.textContent = target;
-            }
-        };
-
-        // Only animate when in view
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                updateCounter();
-                observer.disconnect();
-            }
-        });
-        
-        observer.observe(counter);
+        card.style.transition = 'transform 0.5s ease-out';
     });
 }
 
-// Initialize counter animation after DOM loads
-document.addEventListener('DOMContentLoaded', animateCounters);
+/**
+ * Animated counter for stats (runs on scroll into view)
+ */
+function initCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(counter) {
+    const target = counter.textContent;
+    const isPlus = target.startsWith('+');
+    const numValue = parseFloat(target.replace(/[^0-9.]/g, ''));
+    
+    let current = 0;
+    const increment = numValue / 40;
+    const duration = 1200;
+    const stepTime = duration / 40;
+
+    const updateCounter = () => {
+        current += increment;
+        if (current < numValue) {
+            counter.textContent = (isPlus ? '+' : '') + 
+                (Number.isInteger(numValue) ? Math.floor(current) : current.toFixed(1));
+            setTimeout(updateCounter, stepTime);
+        } else {
+            counter.textContent = target;
+        }
+    };
+
+    updateCounter();
+}
+
+// Initialize counters
+initCounters();
